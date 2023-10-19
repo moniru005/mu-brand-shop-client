@@ -1,0 +1,32 @@
+[
+    {
+      "id": "1",
+      "brand_name": "Gucci",
+      "brand_image": "https://i.ibb.co/yV0W2r9/gucci.png"
+    },
+    {
+      "id": "2]",
+      "brand_name": "Prada",
+      "brand_image": "https://i.ibb.co/18nWCp8/prada.png"
+    },
+    {
+      "id": "3",
+      "brand_name": "Versace",
+      "brand_image": "https://i.ibb.co/M1ZThb7/Versace.png"
+    },
+    {
+      "id": "4",
+      "brand_name": "Dior",
+      "brand_image": "https://i.ibb.co/dBXWCsp/Dior.png"
+    },
+    {
+      "id": "5",
+      "brand_name": "Chanel",
+      "brand_image": "https://i.ibb.co/pj5NKq3/chanel.png"
+    },
+    {
+      "id": "6",
+      "brand_name": "Burberry",
+      "brand_image": "https://i.ibb.co/G98hrtw/Burberry.png"
+    }
+  ]
