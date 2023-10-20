@@ -1,11 +1,14 @@
+import PropTypes from 'prop-types';
+
 const BrandProductsCard = ({ product }) => {
+
   console.log(product);
   const { name, price, photo1, rating } = product || {};
   return (
     <div>
       <div className="  border-2">
         <div className="relative group">
-          <div className=" flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
+          <div className=" flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full "></div>
           <img
             className=" w-full"
             src={photo1}
@@ -66,3 +69,7 @@ const BrandProductsCard = ({ product }) => {
 };
 
 export default BrandProductsCard;
+
+BrandProductsCard.propTypes = {
+    product: PropTypes.node,
+}

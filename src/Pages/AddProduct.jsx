@@ -1,8 +1,10 @@
 import Swal from "sweetalert2";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Header/Navbar";
-
+import {  useNavigate } from "react-router-dom";
 const AddProduct = () => {
+
+  const navigate = useNavigate()
   const handleAddProduct = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -53,6 +55,8 @@ const AddProduct = () => {
             timer: 1500,
           });
         }
+        form.reset();
+        navigate('/');
       });
   };
 
