@@ -30,6 +30,16 @@ const Login = () => {
           lastLoggedAt: result.user?.metadata?.lastSignInTime
       }
       console.log(user);
+      fetch('http://localhost:5000/users', {
+        method: 'PATCH',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+      .then(res => res.json())
+      .then(data =>{
+        console.log(data);
         if (result.user.email || result.user.email) {
           Swal.fire({
             position: "center",
@@ -39,6 +49,7 @@ const Login = () => {
             timer: 1500,
           });
         }
+      })
        
 
         navigate(location?.state ? location.state : "/");

@@ -23,7 +23,7 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     if (!/.{8,16}$/.test(password)) {
       Swal.fire({
@@ -51,14 +51,28 @@ const Register = () => {
             const createdAt = result.user?.metadata?.creationTime;
             const user = { name, email, password, createdAt: createdAt };
             console.log(user);
-            e.target.reset();
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "User Successfully Created",
-              showConfirmButton: false,
-              timer: 1500,
-            });
+            
+            fetch('http://localhost:5000/users', {
+              method: 'POST',
+              headers: {
+                'content-type': 'application/json'
+              },
+              body: JSON.stringify(user)
+            })
+            .then(res => res.json())
+            .then(data =>{
+              console.log(data);
+              if(data.insertedId){
+                Swal.fire({
+                  position: "center",
+                  icon: "success",
+                  title: "User Successfully Created",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                form.reset();
+              }
+            })
 
             navigate("/");
           })

@@ -19,7 +19,7 @@ const Brands = () => {
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6  gap-y-10 px-6 justify-items-center items-center my-10 font-worSans">
         {brands.map((brand) => (
-          <BrandCard key={brand.brand_name} brand={brand}></BrandCard>
+          <BrandCard key={brand.id} brand={brand}></BrandCard>
         ))}
       </div>
     </div>

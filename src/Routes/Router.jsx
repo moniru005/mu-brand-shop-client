@@ -7,6 +7,7 @@ import MyCart from "../Pages/MyCart";
 import Login from "../Auth/Login";
 import Register from "../Auth/Register";
 import PrivateRoute from "./PrivateRouter";
+import BrandProducts from "../Components/Sections/Brands/BrandProducts";
 
 
 
@@ -35,6 +36,11 @@ const Router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/products/:brand_name',
+                element: <BrandProducts></BrandProducts>,
+                loader: () => fetch(`http://localhost:5000/products/`)
             }
         ]
     }

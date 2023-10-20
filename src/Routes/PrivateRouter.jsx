@@ -9,7 +9,7 @@ const PrivateRoute = ({children}) => {
     const location = useLocation();
 
     if(loading){
-        return <span className="loading loading-infinity loading-lg"></span>;
+        return <span className="loading loading-infinity loading-lg max-w-5xl flex mx-auto h-screen text-pink-400"></span>;
     }
 
     if (user) {
