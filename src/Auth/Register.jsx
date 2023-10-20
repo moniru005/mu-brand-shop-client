@@ -7,6 +7,7 @@ import { useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
+import Footer from "../Components/Footer/Footer";
 
 const Register = () => {
   const { signUp } = useContext(AuthContext);
@@ -166,6 +167,9 @@ const Register = () => {
             </Link>
           </p>
         </div>
+      </div>
+      <div className="mt-10">
+        <Footer></Footer>
       </div>
     </div>
   );

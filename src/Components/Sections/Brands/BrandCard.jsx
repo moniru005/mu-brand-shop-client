@@ -7,7 +7,7 @@ const BrandCard = ({brand}) => {
 
     return (
         <div>
-            <Link to ={`/products/${brand_name}`}>
+            <Link to ={`/brandsProduct/${brand_name}`}>
             <div className="flex flex-col justify-center items-center gap-4 font-worSans">
                 <img className="w-48" src={brand_image} alt="" />
                 <p className="text-2xl font-semibold">{brand_name}</p>

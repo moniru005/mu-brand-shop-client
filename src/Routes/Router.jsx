@@ -8,6 +8,10 @@ import Login from "../Auth/Login";
 import Register from "../Auth/Register";
 import PrivateRoute from "./PrivateRouter";
 import BrandProducts from "../Components/Sections/Brands/BrandProducts";
+import ProductDetails from "../Components/Products/ProductDetails";
+import ProductPage from "../Pages/ProductPage";
+import AboutUs from "../Pages/AboutUs";
+
 
 
 
@@ -19,7 +23,8 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch(`http://localhost:5000/products/`)
             },
             {
                 path: '/addProduct',
@@ -38,9 +43,24 @@ const Router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/products/:brand_name',
+                path: '/brandsProduct/:brand_name',
                 element: <BrandProducts></BrandProducts>,
                 loader: () => fetch(`http://localhost:5000/products/`)
+            },
+            {
+                path: '/productDetails/:id',
+                element: <ProductDetails></ProductDetails>,
+                loader: () => fetch(`http://localhost:5000/products`)
+            },
+            {
+                path: '/shop',
+                element: <ProductPage></ProductPage>,
+                loader: () => fetch(`http://localhost:5000/products/`)
+            },
+            {
+                path: '/about',
+                element: <AboutUs></AboutUs>
+
             }
         ]
     }

@@ -1,5 +1,4 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import userPhoto from "../../assets/images/userPhoto.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
 import Swal from "sweetalert2";
@@ -30,13 +29,21 @@ const Navbar = () => {
     <>
       <div className="flex lg:flex-row md:flex-row flex-col gap-2 text-md font-semibold">
         <li>
-          <NavLink to="/">Home</NavLink>{" "}
+          <NavLink to="/">Home</NavLink>
+        </li>
+        {
+          user? 
+          <li>
+          <NavLink to="/addProduct">Add Product</NavLink>
+        </li>
+        :
+        ''
+        }
+        <li>
+          <NavLink to="/shop">Shop</NavLink>
         </li>
         <li>
-          <NavLink to="/addProduct">Add Product</NavLink>{" "}
-        </li>
-        <li>
-          <NavLink to="/cart">My Cart</NavLink>{" "}
+          <NavLink to="/cart">My Cart</NavLink>
         </li>
       </div>
     </>

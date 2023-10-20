@@ -7,13 +7,14 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import { useState } from "react";
+import Footer from "../Components/Footer/Footer";
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const { signIn } = useContext(AuthContext);
- 
+
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSignIn = (e) => {
@@ -25,32 +26,32 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         console.log(result.user);
-        const user ={
-          email, password,
-          lastLoggedAt: result.user?.metadata?.lastSignInTime
-      }
-      console.log(user);
-      fetch('http://localhost:5000/users', {
-        method: 'PATCH',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(user)
-      })
-      .then(res => res.json())
-      .then(data =>{
-        console.log(data);
-        if (result.user.email || result.user.email) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Logged in Successfully",
-            showConfirmButton: false,
-            timer: 1500,
+        const user = {
+          email,
+          password,
+          lastLoggedAt: result.user?.metadata?.lastSignInTime,
+        };
+        console.log(user);
+        fetch("http://localhost:5000/users", {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (result.user.email || result.user.email) {
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Logged in Successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
           });
-        }
-      })
-       
 
         navigate(location?.state ? location.state : "/");
       })
@@ -134,6 +135,9 @@ const Login = () => {
             </Link>
           </p>
         </div>
+      </div>
+      <div className="mt-10">
+        <Footer></Footer>
       </div>
     </div>
   );
