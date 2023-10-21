@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import BrandProductsCard from "./BrandProductsCard";
 import Navbar from "../../Header/Navbar";
+
 const BrandProducts = () => {
   const [product, setProduct] = useState([]);
   const products = useLoaderData();
@@ -24,6 +25,7 @@ const BrandProducts = () => {
   return (
     <div>
       <Navbar></Navbar>
+
 
       <div className=" 2xl:container 2xl:mx-auto font-worSans">
         <div className=" lg:py-10 md:py-8 py-6">

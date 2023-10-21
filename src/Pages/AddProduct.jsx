@@ -40,7 +40,7 @@ const AddProduct = () => {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(newProduct),
+        body: JSON.stringify(newProduct)
       }
     )
       .then((res) => res.json())

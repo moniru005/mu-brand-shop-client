@@ -1,7 +1,43 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Auth/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ProductCard = ({product}) => {
   const {_id, name, price, photo1, rating } = product || {};
+  const {user} = useContext(AuthContext);
+  console.log(user);
+  const userId = user.uid;
+
+  const handleCart = () =>{
+    const cartInfo = {
+      name, photo1, price, userId
+    }
+    console.log(cartInfo);
+
+    fetch("http://localhost:5000/carts", {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(cartInfo)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if (data.insertedId) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Cart successfully added",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    })
+
+  }
+
   return (
     <div>
       <div className="  border-2">
@@ -13,7 +49,7 @@ const ProductCard = ({product}) => {
             alt="Girl wearing pink suit posing"
           />
           <div className=" absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-            <button className=" font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full hover:bg-black hover:text-white" >
+            <button onClick={handleCart} className=" font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full hover:bg-black hover:text-white" >
               Add to Cart
             </button>
             <Link to={`/productDetails/${_id}`}>
