@@ -53,7 +53,7 @@ const Register = () => {
             const user = { name, email, password, createdAt: createdAt };
             console.log(user);
             
-            fetch('http://localhost:5000/users', {
+            fetch('https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/users', {
               method: 'POST',
               headers: {
                 'content-type': 'application/json'
@@ -89,20 +89,20 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="dark:bg-slate-900">
       <div className="shadow-lg mb-6">
         <Navbar></Navbar>
       </div>
-      <div className="hero  font-worSans lg:w-3/5 md:w-3/5 mx-auto">
+      <div className="hero  font-worSans lg:w-3/5 md:w-3/5 mx-auto ">
         <div className="hero-content flex-col w-full">
           <div className="text-center lg:text-left">
-            <h1 className="text-2xl font-bold">Please Register now!</h1>
+            <h1 className="text-2xl font-bold dark:text-white">Please Register now!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleSignUp} className="card-body">
-              <div className="form-control">
+            <form onSubmit={handleSignUp} className="card-body dark:bg-slate-900 dark:border-white dark:border-2 dark:rounded-t-lg">
+              <div className="form-control ">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text dark:text-white">Name</span>
                 </label>
                 <input
                   type="name"
@@ -112,8 +112,8 @@ const Register = () => {
                 />
               </div>
               <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
+                <label className="label ">
+                  <span className="label-text dark:text-white">Email</span>
                 </label>
                 <input
                   type="email"
@@ -125,7 +125,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text dark:text-white">Password</span>
                 </label>
                 <div className="relative form-control">
                   <input

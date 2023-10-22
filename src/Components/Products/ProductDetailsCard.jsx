@@ -24,7 +24,7 @@ const ProductDetailsCard = ({ product }) => {
       }
       console.log(cartInfo);
   
-      fetch("http://localhost:5000/carts", {
+      fetch("https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/carts", {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
