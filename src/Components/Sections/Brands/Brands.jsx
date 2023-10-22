@@ -12,8 +12,8 @@ const Brands = () => {
   }, []);
   return (
     <div >
-      <div className=" text-center lg:py-10 md:py-8 py-6 font-worSans">
-        <p className="uppercase w-10/12 mx-auto md:w-full  font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-slate-600">
+      <div className=" text-center lg:py-10 md:py-8 py-6 font-worSans ">
+        <p className="uppercase w-10/12 mx-auto md:w-full  font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-slate-600 dark:text-white">
           International Brands
           <hr />
         </p>

@@ -44,7 +44,7 @@ const BrandProductsCard = ({ product }) => {
 
   return (
     <div>
-      <div className="  border-2">
+      <div className="  border-2 ">
         <div className="relative group">
           <div className=" flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full "></div>
           <img
@@ -74,11 +74,11 @@ const BrandProductsCard = ({ product }) => {
           </div>
         </div>
 
-        <p className="h-[50px] font-normal text-lg text-center leading-5 text-gray-800 md:mt-6 mt-4">
+        <p className="h-[50px] font-normal text-lg text-center leading-5 text-gray-800 md:mt-6 mt-4 dark:text-white">
           {name}
         </p>
-        <div className="flex justify-between items-center gap-10 my-4 px-4">
-          <p className=" font-semibold text-xl leading-5 text-gray-800 ">
+        <div className="flex justify-between items-center gap-10 my-4 px-4 ">
+          <p className=" font-semibold text-xl leading-5 text-gray-800 dark:text-white">
             ${price}
           </p>
           <p>
@@ -86,7 +86,7 @@ const BrandProductsCard = ({ product }) => {
               <input
                 type="radio"
                 name="rating-4"
-                className="mask mask-star-2 bg-green-500"
+                className="mask mask-star-2 bg-green-500 dark:text-white"
                 defaultValue={rating}
               />
               <input

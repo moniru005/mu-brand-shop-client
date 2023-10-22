@@ -38,8 +38,8 @@ const Cart = ({ cart, carts, setCarts }) => {
   };
   
   return (
-    <div>
-      <div className="my-6 flex flex-col gap-y-10">
+    <div className="">
+      <div className="my-6 flex flex-col gap-y-10 ">
               <div className="flex justify-between items-center">
                 <div className="flex gap-4 font-semibold items-center">
                   <img className="w-16 rounded" src={photo1} alt="" />

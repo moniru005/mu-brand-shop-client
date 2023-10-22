@@ -62,11 +62,12 @@ const AddProduct = () => {
 
   return (
     <>
+      <div className="dark:bg-slate-900 ">
       <div className="shadow-lg">
         <Navbar></Navbar>
       </div>
       <div className=" p-20 ">
-        <h2 className="text-3xl font-extrabold my-10 text-center">
+        <h2 className="text-3xl font-extrabold my-10 text-center dark:text-white">
           Add Product
         </h2>
 
@@ -241,6 +242,7 @@ const AddProduct = () => {
 
       <div className="!bg-white">
         <Footer></Footer>
+      </div>
       </div>
     </>
   );

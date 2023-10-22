@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ProductDetailsCard = ({ product }) => {
-  const { _id, name, price, photo1, photo2, photo3, rating, details } = product || {};
+  const {  name, price, photo1, photo2, photo3,  details } = product || {};
 
-  const [rotate, setRotate] = useState(false);
+    const navigate = useNavigate();
     const [count, setCount] = useState(0);
 
     const addCount = () => {
@@ -15,6 +17,41 @@ const ProductDetailsCard = ({ product }) => {
             setCount((prev) => prev - 1);
         }
     };
+
+    const handleCart = () =>{
+      const cartInfo = {
+        name, photo1, price
+      }
+      console.log(cartInfo);
+  
+      fetch("http://localhost:5000/carts", {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(cartInfo)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Successfully added to Cart",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      })
+
+      navigate('/cart');
+  
+    }
+
+
+
+
   return (
     <div>
       <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 ">
@@ -136,7 +173,7 @@ const ProductDetailsCard = ({ product }) => {
               <hr className=" bg-gray-200 w-full my-2" />
             </div>
 
-            <button className="focus:outline-none focus:ring-2 hover:bg-black focus:ring-offset-2 focus:ring-gray-800 font-medium text-base leading-4 text-white bg-gray-800 w-full py-5 lg:mt-12 mt-6">
+            <button onClick={handleCart} className="focus:outline-none focus:ring-2 hover:bg-black focus:ring-offset-2 focus:ring-gray-800 font-medium text-base leading-4 text-white bg-gray-800 w-full py-5 lg:mt-12 mt-6">
               Add to shopping bag
             </button>
           </div>

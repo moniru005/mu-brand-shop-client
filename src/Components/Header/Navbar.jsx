@@ -2,9 +2,13 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
 import Swal from "sweetalert2";
+import { useTheme } from "../../Hooks/useTheme";
 const Navbar = () => {
   const { user, userSignOut } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const {changeTheme} = useTheme()
+  
 
 
   const handleLogOut = () => {
@@ -25,9 +29,10 @@ const Navbar = () => {
         })
 }
 
+
   const navbar = (
     <>
-      <div className="flex lg:flex-row md:flex-row flex-col gap-2 text-md font-semibold">
+      <div className="flex lg:flex-row md:flex-col flex-col gap-2 text-md font-semibold  ">
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -49,8 +54,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="lg:max-w-6xl mx-auto font-worSans">
-      <div className="navbar bg-base-100">
+    <div className="mx-auto font-worSans dark:bg-slate-800 dark:text-white">
+      <div className="lg:max-w-6xl mx-auto navbar bg-base-100 dark:bg-slate-800 dark:text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -71,12 +76,12 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
             >
               {navbar}
             </ul>
           </div>
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-col items-center gap-1 dark:bg-white dark:text-black">
             <img
               className="w-20"
               src="https://i.ibb.co/DCMzbvh/logo.png
@@ -88,11 +93,19 @@ const Navbar = () => {
             </p>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navbar}</ul>
+        <div className="navbar-center hidden lg:flex ">
+          <ul className="menu menu-horizontal px-1 ">
+            {navbar}
+            </ul>
         </div>
         <div className="navbar-end flex items-center gap-2">
           <div className="flex items-center gap-2">
+
+          <div className="flex flex-row items-center">
+            {/* <label className="font-medium">Light / Dark</label> */}
+            <input  onChange={changeTheme} type="checkbox" className="toggle"  />
+          </div>
+            
             <p className="lg:flex hidden font-medium">{user?.displayName}</p>
 
             {user ? (

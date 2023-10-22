@@ -66,7 +66,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="dark:bg-slate-800 dark:text-white">
       <div className="shadow-lg mb-6">
         <Navbar></Navbar>
       </div>
@@ -76,7 +76,7 @@ const Login = () => {
             <h1 className="text-2xl font-bold">Please Login now!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleSignIn} className="card-body">
+            <form onSubmit={handleSignIn} className="card-body dark:bg-slate-800 dark:text-white dark:border-white dark:border-2">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -85,7 +85,7 @@ const Login = () => {
                   type="email"
                   name="email"
                   placeholder="email"
-                  className="input input-bordered focus:outline-slate-600 focus:outline-1 focus:border-none"
+                  className="input input-bordered focus:outline-slate-600 focus:outline-1 focus:border-none dark:text-black"
                   required
                 />
               </div>
@@ -99,7 +99,7 @@ const Login = () => {
                     name="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
-                    className="input input-bordered focus:outline-slate-600 focus:outline-1 focus:border-none"
+                    className="input input-bordered focus:outline-slate-600 focus:outline-1 focus:border-none dark:text-black"
                     required
                   />
                   <span

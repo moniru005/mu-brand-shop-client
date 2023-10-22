@@ -71,11 +71,11 @@ const ProductCard = ({product}) => {
           </div>
         </div>
 
-        <p className="h-[50px] font-normal text-lg text-center leading-5 text-gray-800 md:mt-6 mt-4">
+        <p className="h-[50px] font-normal text-lg text-center leading-5 text-gray-800 md:mt-6 mt-4 dark:text-white">
           {name}
         </p>
         <div className="flex justify-between items-center gap-10 my-4 px-4">
-          <p className=" font-semibold text-xl leading-5 text-gray-800 ">
+          <p className=" font-semibold text-xl leading-5 text-gray-800 dark:text-white">
             ${price}
           </p>
           <p>

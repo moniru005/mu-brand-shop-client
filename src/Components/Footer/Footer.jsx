@@ -2,7 +2,7 @@ import { FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-base-200 p-10 text-base-content rounded font-worSans">
+    <footer className="footer footer-center bg-base-200 p-10 text-base-content rounded font-worSans dark:bg-slate-800 dark:text-white">
       <nav className="grid grid-flow-col gap-4">
         <Link to="/about">
         <button className="link link-hover">About us</button>

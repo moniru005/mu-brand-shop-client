@@ -6,7 +6,7 @@ import { useLoaderData } from "react-router-dom";
 const ProductPage = () => {
   const products = useLoaderData();
   return (
-    <div>
+    <div className="dark:bg-slate-900">
       <div className="shadow-lg">
         <Navbar></Navbar>
       </div>

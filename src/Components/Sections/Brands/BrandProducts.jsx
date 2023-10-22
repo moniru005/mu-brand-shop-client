@@ -6,6 +6,7 @@ import Navbar from "../../Header/Navbar";
 
 const BrandProducts = () => {
   const [product, setProduct] = useState([]);
+  const [isShowAll, setIsShowAll] = useState(false)
   const products = useLoaderData();
   const { brand_name } = useParams();
   // console.log(brand_name);
@@ -27,32 +28,50 @@ const BrandProducts = () => {
       <Navbar></Navbar>
 
 
-      <div className=" 2xl:container 2xl:mx-auto font-worSans">
+      <div className=" 2xl:container 2xl:mx-auto font-worSans dark:bg-slate-900 dark:text-white ">
         <div className=" lg:py-10 md:py-8 py-6">
-          <p className="w-10/12 mx-auto md:w-full  font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-slate-600 ">
+          <p className="w-10/12 mx-auto md:w-full  font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-slate-600  dark:text-white">
             Brand Name: {brand_name}
           </p>
         </div>
 
         <div className=" py-6 lg:px-20 md:px-6 px-4 font-worSans">
-          <p className=" cursor-pointer hover:underline duration-100 font-normal text-base leading-4 text-gray-600">
+          <p className=" cursor-pointer hover:underline duration-100 font-normal text-base leading-4 text-gray-600 dark:text-white">
             Showing {product.length} products
           </p>
         </div>
 
-        <div className=" grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10 py-6 lg:px-20 md:px-6 px-4 ">
-          {product.map((item) => (
+        <div className=" grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10 py-6 lg:px-20 md:px-6 px-4">
+         {
+          isShowAll ?
+          product.map((item) => (
             <BrandProductsCard
               key={item._id}
               product={item}
             ></BrandProductsCard>
-          ))}
+          ))
+          :
+          product.slice(0, 3).map((item) => (
+            <BrandProductsCard
+              key={item._id}
+              product={item}
+            ></BrandProductsCard>
+          ))
+         }
         </div>
 
-        <div className=" flex justify-center items-center">
-          <button className=" hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 py-5 md:px-16 md:w-auto w-full lg:mt-28 md:mt-12 mt-10 text-white font-medium text-base leading-4">
+        <div className=" flex justify-center items-center ">
+          {
+            !isShowAll ?
+            <button
+            onClick={() => setIsShowAll(!isShowAll)}
+            className={`mb-6 hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 py-5 md:px-16 md:w-auto w-full lg:mt-6 md:mt-6 mt-6 text-white font-medium text-base leading-4 `}
+          >
             Load More
           </button>
+          :
+          ''
+          }
         </div>
       </div>
     </div>

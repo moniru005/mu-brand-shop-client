@@ -4,12 +4,12 @@ const DiscoverCollections = () => {
     <div className="pb-12">
       <div className="flex justify-center items-center">
         <div className="2xl:mx-auto 2xl:container py-12 px-4 sm:px-6 xl:px-20 2xl:px-0 w-full">
-          <div className="flex flex-col justify-center items-center space-y-10">
+          <div className="flex flex-col justify-center items-center space-y-10 ">
             <div className="flex flex-col justify-center items-center space-y-2">
-              <p className="text-xl leading-5 text-gray-600">
+              <p className="text-xl leading-5 text-gray-600 dark:text-white">
                 2023 Trendsetters
               </p>
-              <h1 className="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 text-gray-800">
+              <h1 className="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 text-gray-800 dark:text-white">
                 Modern Trends
               </h1>
             </div>

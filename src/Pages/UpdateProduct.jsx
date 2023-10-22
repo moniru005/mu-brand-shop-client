@@ -1,5 +1,6 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import Navbar from "../Components/Header/Navbar";
 
 const UpdateProduct = () => {
   const products = useLoaderData();
@@ -63,14 +64,15 @@ const UpdateProduct = () => {
 
 
   return (
-    <div>
-         <div className=" p-20 font-worSans">
+    <div className="dark:bg-slate-900">
+      <Navbar></Navbar>
+         <div className=" p-20 font-worSans dark:text-white">
         <h2 className="text-3xl font-semibold my-10 text-center">
           Update Product: 
-          <span className="font-bold pl-2 text-slate-800">{name}</span>
+          <span className="font-bold pl-2 text-slate-800 dark:text-white">{name}</span>
         </h2>
 
-        <form onSubmit={handleUpdateProduct} className=" p-4 border-pink-300 border rounded">
+        <form onSubmit={handleUpdateProduct} className=" p-4 border-pink-300 border rounded dark:text-black">
           {/* row-1 (Name and Brand)*/}
           <div className=" md:flex mb-8 gap-4">
             <div className="form-control md:w-[70%]">
