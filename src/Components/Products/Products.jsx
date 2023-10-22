@@ -1,9 +1,13 @@
 import { useState } from "react";
 import ProductCard from "./ProductCard";
 
-const Products = ({ products }) => {
-  // console.log(products);
+const Products = ({products}) => {
   const [isShowAll, setIsShowAll] = useState(false);
+  
+
+
+
+  
   return (
     <div>
       <div className=" 2xl:container 2xl:mx-auto font-worSans py-10">

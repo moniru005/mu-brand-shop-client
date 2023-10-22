@@ -1,17 +1,17 @@
+
 import { useContext } from "react";
-import { AuthContext } from "../../Auth/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Auth/AuthProvider";
 
 const ProductCard = ({product}) => {
   const {_id, name, price, photo1, rating } = product || {};
+
   const {user} = useContext(AuthContext);
-  console.log(user);
-  const userId = user.uid;
 
   const handleCart = () =>{
     const cartInfo = {
-      name, photo1, price, userId
+      name, photo1, price
     }
     console.log(cartInfo);
 
@@ -57,6 +57,17 @@ const ProductCard = ({product}) => {
                 Details
               </button>
             </Link>
+            {
+              user ?
+              <Link to={`/updateProduct/${_id}`}>
+              <button className=" bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white hover:bg-black hover:text-white">
+                Update Product
+              </button>
+            </Link>
+            :
+            ''
+            }
+           
           </div>
         </div>
 
@@ -71,29 +82,29 @@ const ProductCard = ({product}) => {
             <div className="rating">
               <input
                 type="radio"
-                name="rating-4"
+                name="rating"
                 className="mask mask-star-2 bg-green-500"
                 defaultValue={rating}
               />
               <input
                 type="radio"
-                name="rating-4"
+                name="rating"
                 className="mask mask-star-2 bg-green-500"
                 checked
               />
               <input
                 type="radio"
-                name="rating-4"
+                name="rating"
                 className="mask mask-star-2 bg-green-500"
               />
               <input
                 type="radio"
-                name="rating-4"
+                name="rating"
                 className="mask mask-star-2 bg-green-500"
               />
               <input
                 type="radio"
-                name="rating-4"
+                name="rating"
                 className="mask mask-star-2 bg-green-500"
               />
             </div>

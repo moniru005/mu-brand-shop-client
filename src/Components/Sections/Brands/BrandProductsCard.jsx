@@ -10,12 +10,12 @@ const BrandProductsCard = ({ product }) => {
   const { _id, name, price, photo1, rating } = product || {};
 
   const {user} = useContext(AuthContext);
-  console.log(user);
-  const userId = user.uid;
+  // console.log(user);
+  
 
   const handleCart = () =>{
     const cartInfo = {
-      name, photo1, price, userId
+      name, photo1, price
     }
     console.log(cartInfo);
 
@@ -61,6 +61,16 @@ const BrandProductsCard = ({ product }) => {
               Quick View
             </button>
             </Link>
+            {
+              user ?
+              <Link to={`/updateProduct/${_id}`}>
+              <button className=" bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white hover:bg-black hover:text-white">
+                Update Product
+              </button>
+            </Link>
+            :
+            ''
+            }
           </div>
         </div>
 

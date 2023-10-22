@@ -8,8 +8,6 @@ const MyCart = () => {
   const loadCarts = useLoaderData();
   const [carts, setCarts] = useState(loadCarts);
   
-  const [total, setTotal] = useState();
-
   const priceArray = [];
   for(let cart of carts){
     const price = cart.price;
@@ -54,8 +52,23 @@ const MyCart = () => {
 
         {/* Right side */}
         <div className="lg:w-2/6 mb-10 mt-20 bg-slate-100 rounded lg:px-10 lg:py-6 px-4">
-            <div className="flex  justify-between items-center  text-xl font-semibold text-gray-600">
+            <div className="flex  justify-between items-center  text-xl font-medium text-gray-400 pt-6">
                 <p>Stubtotal</p>
+                <p>$ {result}</p>
+            </div>
+            <hr className="my-6" />
+            <div className="flex  justify-between items-center  text-xl font-medium text-gray-400">
+                <p>Tax</p>
+                <p>$ 0</p>
+            </div>
+            <hr className="my-6" />
+            <div className="flex  justify-between items-center  text-xl font-medium text-gray-400">
+                <p>Shipping</p>
+                <p>$ 0</p>
+            </div>
+            <hr className="my-6" />
+            <div className="flex  justify-between items-center  text-xl font-semibold text-gray-600">
+                <p>Total</p>
                 <p>$ {result}</p>
             </div>
         </div>
