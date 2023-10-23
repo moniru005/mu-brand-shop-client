@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ProductCard from "./ProductCard";
+import PropTypes from 'prop-types';
 
 const Products = ({products}) => {
   const [isShowAll, setIsShowAll] = useState(false);
@@ -52,3 +53,7 @@ const Products = ({products}) => {
 };
 
 export default Products;
+
+Products.propTypes = {
+  products: PropTypes.node,
+}

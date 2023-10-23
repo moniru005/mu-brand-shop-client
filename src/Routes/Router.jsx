@@ -11,7 +11,6 @@ import BrandProducts from "../Components/Sections/Brands/BrandProducts";
 import ProductDetails from "../Components/Products/ProductDetails";
 import ProductPage from "../Pages/ProductPage";
 import AboutUs from "../Pages/AboutUs";
-
 import UpdateProduct from "../Pages/updateProduct";
 
 
@@ -26,7 +25,7 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch(`https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/products/`)
+                loader: () => fetch(`http://localhost:5000/products/`)
                                 
             },
           
@@ -37,12 +36,12 @@ const Router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: () => fetch("https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/carts")
+                loader: () => fetch("http://localhost:5000/carts")
             },
           
             {
                 path: '/login',
-                element: <Login></Login>
+                element: <Login></Login>                
             },
             {
                 path: '/register',
@@ -51,26 +50,27 @@ const Router = createBrowserRouter([
             {
                 path: '/brandsProduct/:brand_name',
                 element: <BrandProducts></BrandProducts>,
-                loader: () => fetch(`https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/products/`)
+                loader: () => fetch(`http://localhost:5000/products/`)
             },
             {
                 path: '/productDetails/:id',
                 element: <ProductDetails></ProductDetails>,
-                loader: () => fetch(`https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/products`)
+                loader: () => fetch(`http://localhost:5000/products`)
             },
             {
                 path: '/shop',
                 element: <ProductPage></ProductPage>,
-                loader: () => fetch(`https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/products/`)
+                loader: () => fetch(`http://localhost:5000/products/`)
             },
             {
                 path: '/about',
-                element: <AboutUs></AboutUs>
+                element: <AboutUs></AboutUs>,
+                
             },
             {
                 path: '/updateProduct/:id',
                 element: <UpdateProduct></UpdateProduct>,
-                loader:({params}) => fetch(`https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/products/${params.id}`)
+                loader:({params}) => fetch(`http://localhost:5000/products/${params.id}`)
             }
         ]
     }

@@ -1,13 +1,17 @@
-
+import PropTypes from 'prop-types';
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Auth/AuthProvider";
+import { FaStar } from 'react-icons/fa';
 
 const ProductCard = ({product}) => {
-  const {_id, name, price, photo1, rating } = product || {};
+
+  const {_id, name, price, photo1, ratings } = product || {};
 
   const {user} = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleCart = () =>{
     const cartInfo = {
@@ -15,7 +19,7 @@ const ProductCard = ({product}) => {
     }
     console.log(cartInfo);
 
-    fetch("https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/carts", {
+    fetch("http://localhost:5000/carts", {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -35,7 +39,7 @@ const ProductCard = ({product}) => {
         });
       }
     })
-
+    navigate('/cart');
   }
 
   return (
@@ -80,33 +84,10 @@ const ProductCard = ({product}) => {
           </p>
           <p>
             <div className="rating">
-              <input
-                type="radio"
-                name="rating"
-                className="mask mask-star-2 bg-green-500"
-                defaultValue={rating}
-              />
-              <input
-                type="radio"
-                name="rating"
-                className="mask mask-star-2 bg-green-500"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating"
-                className="mask mask-star-2 bg-green-500"
-              />
-              <input
-                type="radio"
-                name="rating"
-                className="mask mask-star-2 bg-green-500"
-              />
-              <input
-                type="radio"
-                name="rating"
-                className="mask mask-star-2 bg-green-500"
-              />
+            <div className="rating flex flex-row-reverse gap-1 justify-center items-center font-worSans">
+             <p> <FaStar className="text-xl text-green-500"></FaStar> </p>
+              <p className="text-2xl font-medium dark:text-green-500 ">{ratings}</p>
+            </div>
             </div>
           </p>
         </div>
@@ -116,3 +97,8 @@ const ProductCard = ({product}) => {
 };
 
 export default ProductCard;
+ProductCard.propTypes = {
+  product: PropTypes.node,
+ 
+
+}

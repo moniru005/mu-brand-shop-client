@@ -10,6 +10,7 @@ import { useState } from "react";
 import Footer from "../Components/Footer/Footer";
 
 const Login = () => {
+  
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -32,7 +33,7 @@ const Login = () => {
           lastLoggedAt: result.user?.metadata?.lastSignInTime,
         };
         console.log(user);
-        fetch("https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

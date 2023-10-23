@@ -17,7 +17,7 @@ const ProductDetails = () => {
   }, [id, products]);
 
   return <div>
-    <div>
+    <div className="dark:bg-slate-900">
         <div className="shadow-lg">
         <Navbar></Navbar>
         </div>

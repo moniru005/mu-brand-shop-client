@@ -18,7 +18,7 @@ const Cart = ({ cart, carts, setCarts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/carts/${_id}`, {
+        fetch(`http://localhost:5000/carts/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -45,7 +45,7 @@ const Cart = ({ cart, carts, setCarts }) => {
                   <img className="w-16 rounded" src={photo1} alt="" />
                   <h2>{name}</h2>
                 </div>
-                <div className="flex items-center gap-10 ">
+                <div className="flex items-center gap-10 dark:text-black">
                   <select className="select select-bordered ">
                     <option>1</option>
                     <option>2</option>
@@ -54,10 +54,10 @@ const Cart = ({ cart, carts, setCarts }) => {
                     <option>5</option>
                     <option>6</option>
                   </select>
-                  <p className="text-xl font-bold">$ {price}</p>
+                  <p className="text-xl font-bold dark:text-white">$ {price}</p>
                   <button
                     onClick={() => handleDelete(_id)}
-                    className="pr-5 text-gray-400 hover:text-red-500"
+                    className="pr-5 text-gray-400 hover:text-red-500 dark:text-white"
                   >
                     <FaTrash></FaTrash>
                   </button>

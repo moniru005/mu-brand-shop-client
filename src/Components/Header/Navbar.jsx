@@ -3,32 +3,32 @@ import { useContext } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
 import Swal from "sweetalert2";
 import { useTheme } from "../../Hooks/useTheme";
+import {  BsMoonStarsFill, BsSun } from 'react-icons/bs';
 const Navbar = () => {
+ 
   const { user, userSignOut } = useContext(AuthContext);
   const navigate = useNavigate();
+  console.log(user);
 
-  const {changeTheme} = useTheme()
-  
-
+  const { changeTheme, mode } = useTheme();
 
   const handleLogOut = () => {
     userSignOut()
-        .then(() => {
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Logged out Successfully',
-                showConfirmButton: false,
-                timer: 1500
-            })
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Logged out Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
 
-            navigate('/login')
-        })
-        .catch(error => {
-            console.log(error)
-        })
-}
-
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const navbar = (
     <>
@@ -36,14 +36,13 @@ const Navbar = () => {
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
-        {
-          user? 
+        {user ? (
           <li>
-          <NavLink to="/addProduct">Add Product</NavLink>
-        </li>
-        :
-        ''
-        }
+            <NavLink to="/addProduct">Add Product</NavLink>
+          </li>
+        ) : (
+          ""
+        )}
         <li>
           <NavLink to="/shop">Shop</NavLink>
         </li>
@@ -94,18 +93,24 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex ">
-          <ul className="menu menu-horizontal px-1 ">
-            {navbar}
-            </ul>
+          <ul className="menu menu-horizontal px-1 ">{navbar}</ul>
         </div>
         <div className="navbar-end flex items-center gap-2">
+          
           <div className="flex items-center gap-2">
-
-          <div className="flex flex-row items-center">
-            {/* <label className="font-medium">Light / Dark</label> */}
+            {/* <div className="flex flex-row items-center">
             <input  onChange={changeTheme} type="checkbox" className="toggle"  />
-          </div>
-            
+          </div> */}
+
+            <button onClick={changeTheme}>
+              {
+                mode === "dark" ? 
+                <BsSun className="text-2xl font-medium"></BsSun>
+                :
+                <BsMoonStarsFill className="text-2xl font-medium"></BsMoonStarsFill> 
+              }
+            </button>
+
             <p className="lg:flex hidden font-medium">{user?.displayName}</p>
 
             {user ? (

@@ -36,7 +36,7 @@ const UpdateProduct = () => {
     };
     // console.log(updateProduct);
 
-    fetch(`https://mu-brand-shop-server-py07srdqc-md-monir-uddins-projects.vercel.app/products/${_id}`,
+    fetch(`http://localhost:5000/products/${_id}`,
       {
         method: "PUT",
         headers: {
@@ -77,7 +77,7 @@ const UpdateProduct = () => {
           <div className=" md:flex mb-8 gap-4">
             <div className="form-control md:w-[70%]">
               <label className="label">
-                <span className="label-text">Product Name</span>
+                <span className="label-text dark:text-white">Product Name</span>
               </label>
               <label className="">
                 <input
@@ -91,7 +91,7 @@ const UpdateProduct = () => {
             </div>
             <div className="form-control md:w-[30%]">
               <label className="label">
-                <span className="label-text">Brand</span>
+                <span className="label-text dark:text-white">Brand</span>
               </label>
               <label className=" ">
               <select name="brand" defaultValue={brand} className="select select-bordered w-full max-w-xs focus:outline-slate-600 focus:outline-1 focus:border-none">
@@ -112,7 +112,7 @@ const UpdateProduct = () => {
           <div className=" md:flex mb-8 gap-4">
             <div className="form-control md:w-[70%]">
               <label className="label">
-                <span className="label-text">Category</span>
+                <span className="label-text dark:text-white">Category</span>
               </label>
               <label className="">
                 <input
@@ -126,7 +126,7 @@ const UpdateProduct = () => {
             </div>
             <div className="form-control md:w-[30%]">
               <label className="label">
-                <span className="label-text">Price</span>
+                <span className="label-text dark:text-white">Price</span>
               </label>
               <label className="input-group">
                 <span>$</span>
@@ -144,7 +144,7 @@ const UpdateProduct = () => {
           <div className=" md:flex mb-8 gap-4">
             <div className="form-control md:w-[70%]">
               <label className="label">
-                <span className="label-text">Description</span>
+                <span className="label-text dark:text-white">Description</span>
               </label>
               <label className="">
                 <textarea
@@ -161,7 +161,7 @@ const UpdateProduct = () => {
 
             <div className="form-control md:w-[30%]">
               <label className="label">
-                <span className="label-text">Ratings</span>
+                <span className="label-text dark:text-white">Ratings</span>
               </label>
               <label className="">
                 <select name="ratings" defaultValue={ratings}  className="select select-bordered w-full max-w-xs focus:outline-slate-600 focus:outline-1 focus:border-none">
@@ -181,7 +181,7 @@ const UpdateProduct = () => {
           <div className=" md:flex mb-8 gap-4">
             <div className="form-control md:w-full">
               <label className="label">
-                <span className="label-text">Long Description</span>
+                <span className="label-text dark:text-white">Long Description</span>
               </label>
               <label className="">
                 <textarea
@@ -200,7 +200,7 @@ const UpdateProduct = () => {
           <div className="md:flex mb-8 gap-4">
             <div className="form-control md:w-full">
               <label className="label">
-                <span className="label-text">Photo 1</span>
+                <span className="label-text dark:text-white">Photo 1</span>
               </label>
               <label className="">
                 <input
@@ -214,7 +214,7 @@ const UpdateProduct = () => {
             </div>
             <div className="form-control md:w-full">
               <label className="label">
-                <span className="label-text">Photo 2</span>
+                <span className="label-text dark:text-white">Photo 2</span>
               </label>
               <label className="">
                 <input
@@ -228,7 +228,7 @@ const UpdateProduct = () => {
             </div>
             <div className="form-control md:w-full">
               <label className="label">
-                <span className="label-text">Photo 3</span>
+                <span className="label-text dark:text-white">Photo 3</span>
               </label>
               <label className="">
                 <input

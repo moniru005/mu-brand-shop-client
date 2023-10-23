@@ -1,8 +1,14 @@
+
 import About from "../Components/About/About";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Header/Navbar";
 
+
 const AboutUs = () => {
+  
+  
+ 
+
   return (
     <div>
       <div className="shadow-md">

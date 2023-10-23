@@ -44,15 +44,14 @@ const AuthProvider = ({children}) => {
     }, [])
 
 
+
     const authInfo = {
         user,
         loading,
         googleSignIn,
         signUp,
         signIn,
-        userSignOut
-
-
+        userSignOut,
 
     }
 
