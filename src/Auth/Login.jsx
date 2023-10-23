@@ -33,7 +33,7 @@ const Login = () => {
           lastLoggedAt: result.user?.metadata?.lastSignInTime,
         };
         console.log(user);
-        fetch("http://localhost:5000/users", {
+        fetch("https://mu-brand-shop-server-bjztvstl4-md-monir-uddins-projects.vercel.app/users", {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

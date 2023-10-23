@@ -36,7 +36,7 @@ const UpdateProduct = () => {
     };
     // console.log(updateProduct);
 
-    fetch(`http://localhost:5000/products/${_id}`,
+    fetch(`https://mu-brand-shop-server-bjztvstl4-md-monir-uddins-projects.vercel.app/products/${_id}`,
       {
         method: "PUT",
         headers: {
