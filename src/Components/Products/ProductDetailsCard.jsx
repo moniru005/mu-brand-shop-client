@@ -26,7 +26,7 @@ const ProductDetailsCard = ({ product }) => {
       }
       console.log(cartInfo);
   
-      fetch("https://mu-brand-shop-server-bjztvstl4-md-monir-uddins-projects.vercel.app/carts", {
+      fetch("https://https://mu-brand-shop-server-mpg9zz4le-md-monir-uddins-projects.vercel.app/carts", {
         method: 'POST',
         headers: {
           'content-type': 'application/json'

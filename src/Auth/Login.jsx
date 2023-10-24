@@ -33,7 +33,7 @@ const Login = () => {
           lastLoggedAt: result.user?.metadata?.lastSignInTime,
         };
         console.log(user);
-        fetch("https://mu-brand-shop-server-bjztvstl4-md-monir-uddins-projects.vercel.app/users", {
+        fetch("https://https://mu-brand-shop-server-mpg9zz4le-md-monir-uddins-projects.vercel.app/users", {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

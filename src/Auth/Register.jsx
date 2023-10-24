@@ -53,7 +53,7 @@ const Register = () => {
             const user = { name, email, password, createdAt: createdAt };
             console.log(user);
             
-            fetch('https://mu-brand-shop-server-bjztvstl4-md-monir-uddins-projects.vercel.app/users', {
+            fetch('https://https://mu-brand-shop-server-mpg9zz4le-md-monir-uddins-projects.vercel.app/users', {
               method: 'POST',
               headers: {
                 'content-type': 'application/json'
