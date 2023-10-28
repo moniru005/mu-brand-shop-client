@@ -37,7 +37,7 @@ const AddProduct = () => {
     console.log(newProduct);
 
     fetch(
-      "https://https://mu-brand-shop-server-mpg9zz4le-md-monir-uddins-projects.vercel.app/products",
+      "https://mu-brand-shop-server-l04p2omml-md-monir-uddins-projects.vercel.app/products",
       {
         method: "POST",
         headers: {
