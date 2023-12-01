@@ -5,9 +5,6 @@ import PropTypes from 'prop-types';
 const Products = ({products}) => {
   const [isShowAll, setIsShowAll] = useState(false);
   
-
-
-
   
   return (
     <div>
