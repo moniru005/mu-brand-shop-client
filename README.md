@@ -1,4 +1,3 @@
-
 # Project Name: Brand Shop
 
 
@@ -7,9 +6,9 @@
 
 Live Link: https://mu-brand-shop.web.app
 
-Server-side Link: https://github.com/programming-hero-web-course-4/b8a10-brandshop-server-side-moniru005
+Server Side Link: https://github.com/moniru005/mu-brand-shop-server 
 
-Client-side Link: https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-moniru005.git
+Client Side Link: https://github.com/moniru005/mu-brand-shop-client 
 ## Features
 
 Certainly! Here are at least 5 project features for a fashion e-commerce brand shop, along with points that include the mentioned requirements:
@@ -48,3 +47,58 @@ Use consistent branding throughout the website's design.
 
  
 *These features should create a foundation for a fashion e-commerce brand shop with user-friendly features, brand presence, and security. You can further enhance and expand these features based on your project requirements and user needs.*
+## Tech Stack
+
+**Client:** React, React Router, TailwindCSS, DaisyUI, 
+
+**Server:** Node, Express, MongoDB, Dotenv
+
+
+## Installation
+
+
+Install my Project with NPM & React Router DOM
+```bash
+    npm create vite@latest my-project -- --template react
+    cd my-project
+    npm install react-router-dom localforage match-sorter sort-by
+````
+Install Tailwind CSS with Vite
+```bash
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+```
+Install PropTypes for prop validation
+```bash
+    npm install --save prop-types
+```
+Install sweetalert2 for showing beautiful messages
+```bash
+    npm install sweetalert2
+```
+Install AOS Animation
+```bash
+    npm install aos --save
+```
+
+## Importing on this project
+
+Import for PropTypes validtion
+```bash
+    import PropTypes from 'prop-types'; // ES6
+```
+Import for Icons in sweetalert2
+```bash
+    import Swal from 'sweetalert2'
+```
+Import for AOS Animation
+```bash
+    import AOS from 'aos';
+    import 'aos/dist/aos.css'; // You can also use <link> for styles
+    // ..
+    AOS.init();
+```
+## Created By
+
+*---Md. Monir Uddin*
+
