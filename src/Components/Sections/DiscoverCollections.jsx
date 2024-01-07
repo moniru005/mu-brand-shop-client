@@ -1,18 +1,21 @@
+import Title from "../Title/Title";
+
 const DiscoverCollections = () => {
   return (
     <>
     <div className="pb-12">
+      <Title heading={"Modern Trends"} paragraph={"Unveiling Today's Stylish Modern Trends"}></Title>
       <div className="flex justify-center items-center">
         <div className="2xl:mx-auto 2xl:container py-12 px-4 sm:px-6 xl:px-20 2xl:px-0 w-full">
           <div className="flex flex-col justify-center items-center space-y-10 ">
-            <div className="flex flex-col justify-center items-center space-y-2">
+            {/* <div className="flex flex-col justify-center items-center space-y-2">
               <p className="text-xl leading-5 text-gray-600 dark:text-white">
                 2023 Trendsetters
               </p>
               <h1 className="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 text-gray-800 dark:text-white">
                 Modern Trends
               </h1>
-            </div>
+            </div> */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-4 lg:gap-x-8 w-full">
               <div className="relative group flex justify-center items-center h-full w-full">
                 <img

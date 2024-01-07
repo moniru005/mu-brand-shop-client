@@ -22,7 +22,7 @@ const BrandProductsCard = ({ product }) => {
     }
     console.log(cartInfo);
 
-    fetch("https://mu-brand-shop-server.vercel.app/carts", {
+    fetch("http://localhost:5000/carts", {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

@@ -5,6 +5,7 @@ import Brands from "../Components/Sections/Brands/Brands";
 import DiscoverCollections from "../Components/Sections/DiscoverCollections";
 import About from "../Components/About/About";
 import { useLoaderData } from "react-router-dom";
+import Testimonials from "../Components/Testimonials/Testimonials";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
             <Products products={products}></Products>
             <DiscoverCollections></DiscoverCollections>
             <About></About>
+            <Testimonials></Testimonials>
             </div>
             <Footer></Footer>
         </div>

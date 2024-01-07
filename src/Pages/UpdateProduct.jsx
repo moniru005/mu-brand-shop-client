@@ -36,7 +36,7 @@ const UpdateProduct = () => {
     };
     // console.log(updateProduct);
 
-    fetch(`https://mu-brand-shop-server.vercel.app/products/${_id}`,
+    fetch(`http://localhost:5000/products/${_id}`,
       {
         method: "PUT",
         headers: {

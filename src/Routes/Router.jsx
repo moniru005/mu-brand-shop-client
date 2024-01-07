@@ -25,7 +25,7 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch(`https://mu-brand-shop-server.vercel.app/products/`)
+                loader: () => fetch(`http://localhost:5000/products/`)
                                 
             },
           
@@ -36,7 +36,7 @@ const Router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: () => fetch("https://mu-brand-shop-server.vercel.app/carts")
+                loader: () => fetch("http://localhost:5000/carts")
             },
           
             {
@@ -50,17 +50,17 @@ const Router = createBrowserRouter([
             {
                 path: '/brandsProduct/:brand_name',
                 element: <BrandProducts></BrandProducts>,
-                loader: () => fetch(`https://mu-brand-shop-server.vercel.app/products/`)
+                loader: () => fetch(`http://localhost:5000/products/`)
             },
             {
                 path: '/productDetails/:id',
                 element: <ProductDetails></ProductDetails>,
-                loader: () => fetch(`https://mu-brand-shop-server.vercel.app/products`)
+                loader: () => fetch(`http://localhost:5000/products`)
             },
             {
                 path: '/shop',
                 element: <ProductPage></ProductPage>,
-                loader: () => fetch(`https://mu-brand-shop-server.vercel.app/products/`)
+                loader: () => fetch(`http://localhost:5000/products/`)
             },
             {
                 path: '/about',
@@ -70,7 +70,7 @@ const Router = createBrowserRouter([
             {
                 path: '/updateProduct/:id',
                 element: <UpdateProduct></UpdateProduct>,
-                loader:({params}) => fetch(`https://mu-brand-shop-server.vercel.app/products/${params.id}`)
+                loader:({params}) => fetch(`http://localhost:5000/products/${params.id}`)
             }
         ]
     }

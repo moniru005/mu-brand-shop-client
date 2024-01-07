@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProductCard from "./ProductCard";
 import PropTypes from 'prop-types';
+import Title from "../Title/Title";
 
 const Products = ({products}) => {
   const [isShowAll, setIsShowAll] = useState(false);
@@ -9,12 +10,13 @@ const Products = ({products}) => {
   return (
     <div>
       <div className=" 2xl:container 2xl:mx-auto font-worSans py-10">
-        <div className=" lg:py-10 md:py-8 py-6">
+        <Title heading={"Winter Collection"} paragraph={"Introducing Our Captivating Winter Collection"}></Title>
+        {/* <div className=" lg:py-10 md:py-8 py-6">
           <p className="w-10/12 mx-auto md:w-full  font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-slate-600  dark:text-white">
             Winter Collections
             <hr />
           </p>
-        </div>
+        </div> */}
 
         <div className=" py-6 lg:px-20 md:px-6 px-4 font-worSans">
           <p className=" cursor-pointer hover:underline duration-100 font-normal text-base leading-4 text-gray-600 dark:text-white">

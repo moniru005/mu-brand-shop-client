@@ -37,7 +37,7 @@ const AddProduct = () => {
     console.log(newProduct);
 
     fetch(
-      "https://mu-brand-shop-server.vercel.app/products",
+      "http://localhost:5000/products",
       {
         method: "POST",
         headers: {
